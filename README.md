@@ -15,6 +15,36 @@ CyberAI is an internship-stage defensive security project that combines network 
 7. Prints a short terminal summary and creates an HTML report. An optional full technical text report can also be saved.
 8. Includes offline unit tests for core matching logic.
 
+## System Architecture
+
+```mermaid
+flowchart TD
+    A["CyberAI - Windows Host<br/>Python Application"] 
+    B["Ubuntu VM<br/>Nmap Scanner"]
+    C["Nmap XML Output"]
+    D["Python Processing<br/>Service & Version Detection"]
+    E["NVD API<br/>CVE & CPE Information"]
+    F["Vulnerability Matching<br/>Version Boundary Checks"]
+    G["Local Ollama LLM<br/>Optional AI Explanation"]
+    H["Assessment Results"]
+    I["Terminal Summary"]
+    J["HTML Assessment Report"]
+    K["Technical Text Report<br/>Optional"]
+
+    A -->|"SSH Connection"| B
+    B -->|"Service Scan"| C
+    C --> D
+    D -->|"CVE Lookup"| E
+    E --> F
+    D --> F
+    F --> H
+    H --> G
+    G --> H
+    H --> I
+    H --> J
+    H --> K
+
+
 ## Current lab configuration
 
 The current source is intentionally restricted to the lab topology used during development:
