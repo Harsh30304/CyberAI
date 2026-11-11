@@ -19,30 +19,30 @@ CyberAI is an internship-stage defensive security project that combines network 
 
 ```mermaid
 flowchart TD
-    A["CyberAI - Windows Host<br/>Python Application"]
-    B["Ubuntu VM<br/>Nmap Scanner"]
+    A["CyberAI - Windows Host"]
+    B["Ubuntu VM - Nmap Scanner"]
     C["Nmap XML Output"]
-    D["Python Processing<br/>Service and Version Detection"]
-    E["NVD API<br/>CVE and CPE Information"]
-    F["Vulnerability Matching<br/>Version Boundary Checks"]
-    G["Local Ollama LLM<br/>Optional AI Explanation"]
+    D["Python Processing - Service Detection"]
+    E["NVD API - CVE and CPE Data"]
+    F["Vulnerability Matching"]
+    G["Local Ollama - AI Explanation"]
     H["Assessment Results"]
     I["Terminal Summary"]
     J["HTML Assessment Report"]
     K["Technical Text Report"]
 
-    A -->|SSH Connection| B
-    B -->|Service Scan| C
+    A --> B
+    B --> C
     C --> D
     D --> E
     E --> F
-    D --> F
     F --> H
     H --> G
     G --> H
     H --> I
     H --> J
     H --> K
+```
 
 ## Current lab configuration
 
@@ -52,7 +52,7 @@ The current source is intentionally restricted to the lab topology used during d
 |---|---|
 | Ubuntu scanner VM (SSH) | `192.168.56.10` |
 | SSH port | `22` |
-| SSH username | `ciren` |
+| SSH username | `test` |
 | Metasploitable training target | `192.168.77.20` |
 | Local Ollama API | `http://localhost:11434/api/chat` |
 | Ollama model | `llama3.2:3b` |
