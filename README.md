@@ -19,22 +19,22 @@ CyberAI is an internship-stage defensive security project that combines network 
 
 ```mermaid
 flowchart TD
-    A["CyberAI - Windows Host<br/>Python Application"] 
+    A["CyberAI - Windows Host<br/>Python Application"]
     B["Ubuntu VM<br/>Nmap Scanner"]
     C["Nmap XML Output"]
-    D["Python Processing<br/>Service & Version Detection"]
-    E["NVD API<br/>CVE & CPE Information"]
+    D["Python Processing<br/>Service and Version Detection"]
+    E["NVD API<br/>CVE and CPE Information"]
     F["Vulnerability Matching<br/>Version Boundary Checks"]
     G["Local Ollama LLM<br/>Optional AI Explanation"]
     H["Assessment Results"]
     I["Terminal Summary"]
     J["HTML Assessment Report"]
-    K["Technical Text Report<br/>Optional"]
+    K["Technical Text Report"]
 
-    A -->|"SSH Connection"| B
-    B -->|"Service Scan"| C
+    A -->|SSH Connection| B
+    B -->|Service Scan| C
     C --> D
-    D -->|"CVE Lookup"| E
+    D --> E
     E --> F
     D --> F
     F --> H
@@ -43,7 +43,6 @@ flowchart TD
     H --> I
     H --> J
     H --> K
-
 
 ## Current lab configuration
 
